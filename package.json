@@ -1,25 +1,44 @@
 {
-  "name": "weekly",
+  "name": "blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "concurrently \"contentlayer dev\" \"next dev\"",
+    "build": "contentlayer build && next build",
+    "turbo": "next dev --turbo",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "next build && next start"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "contentlayer": "^0.3.4",
+    "date-fns": "^2.30.0",
+    "lucide-react": "^0.263.1",
+    "next": "13.4.12",
+    "next-contentlayer": "^0.3.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-pretty-code": "^0.10.0",
+    "rehype-slug": "^5.1.0",
+    "remark-gfm": "^3.0.1",
+    "tailwind-merge": "^1.14.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "20.4.4",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
+    "concurrently": "^8.2.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
-    "next": "13.4.12",
     "postcss": "8.4.27",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
+    "tailwindcss-animate": "^1.0.6",
     "typescript": "5.1.6"
   }
 }
