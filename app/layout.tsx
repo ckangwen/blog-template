@@ -1,16 +1,20 @@
-import '@/styles/globals.css'
-import localFont from 'next/font/local'
+import "@/styles/globals.css";
 
-const LxgwWenKaiFont = localFont({ src: '../public/fonts/LXGWWenKai-Regular.ttf' })
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="zh-CN">
-      <body className={LxgwWenKaiFont.className}>{children}</body>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"
+        />
+      </head>
+      <body className="LxgwWenKaiFont">{children}</body>
     </html>
-  )
+  );
 }
